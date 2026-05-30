@@ -1,0 +1,82 @@
+{
+  "id": "status-changes-inprogress-to-confirmed",
+  "testPlanId": "30e8ca38-5298-471d-b617-6cea09c16015",
+  "requirementId": "9dd7336b-d9e1-42a0-a127-5182d8bca126",
+  "suiteName": "Save and Confirm Actuals - E2E",
+  "case": {
+    "id": "status-changes-inprogress-to-confirmed",
+    "title": "Week status changes from In-Progress to Confirmed after confirmation",
+    "priority": "P0",
+    "platforms": [
+      "chrome",
+      "firefox",
+      "safari",
+      "edge"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Open application URL",
+        "value": "https://qa.cioptimize.app"
+      },
+      {
+        "id": "step2",
+        "action": "fill",
+        "targetDescription": "Enter username",
+        "locatorHint": "[name='username']",
+        "value": "auto.tester@yopmail.com"
+      },
+      {
+        "id": "step3",
+        "action": "fill",
+        "targetDescription": "Enter password",
+        "locatorHint": "[name='password']",
+        "value": "Test@1234"
+      },
+      {
+        "id": "step4",
+        "action": "tap",
+        "targetDescription": "Click Login button",
+        "locatorHint": "[data-testid='login-button']"
+      },
+      {
+        "id": "step5",
+        "action": "tap",
+        "targetDescription": "Navigate to Actuals page",
+        "locatorHint": "[data-testid='nav-actuals']"
+      },
+      {
+        "id": "step6",
+        "action": "tap",
+        "targetDescription": "Select a past week",
+        "locatorHint": "[data-testid='week-selector-past']"
+      },
+      {
+        "id": "step7",
+        "action": "assertText",
+        "targetDescription": "Assert week status is In-Progress",
+        "locatorHint": "[data-testid='week-status']",
+        "assertion": "In-Progress"
+      },
+      {
+        "id": "step8",
+        "action": "tap",
+        "targetDescription": "Click Save and Confirm",
+        "locatorHint": "[data-testid='save-confirm-button']"
+      },
+      {
+        "id": "step9",
+        "action": "assertText",
+        "targetDescription": "Assert week status is Confirmed",
+        "locatorHint": "[data-testid='week-status']",
+        "assertion": "Confirmed"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}

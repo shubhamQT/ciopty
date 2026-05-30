@@ -1,0 +1,6 @@
+{
+  "id": "9dd7336b-d9e1-42a0-a127-5182d8bca126",
+  "title": "Save and Confirm Actuals ",
+  "content": "ACT-006 — Save and Confirm Actuals \n\nModule: Confirmation Workflow \n\nTags: regression, smoke \n\nPriority: High \n\nDescription: \n\nVerify that a user can save and confirm actuals for a past week. \n\n \n\nAcceptance Criteria: \n\nUser should be able to login to the application with valid credentials. \n\nUser should be able to navigate to the Actuals page. \n\nUser should navigate to a past week. \n\nUser should be able to click Save and Confirm. \n\nWeek status should change from In-Progress to Confirmed. \n\nUser should see success notification. \n\nConfirmed status should persist after refresh. \n\n \n\nTest Data: \n\nurl: https://qa.cioptimize.app \n\nusername: auto.tester@yopmail.com \n\npassword: Test@1234 \n\nweekType: Past Week ",
+  "createdAt": "2026-05-30T13:58:21.066Z"
+}
