@@ -1,0 +1,80 @@
+{
+  "id": "return-to-current-week",
+  "testPlanId": "02ead3c1-bedd-4943-917b-a8d1808139cf",
+  "requirementId": "403df7fe-4c46-49e8-9f76-cb30d3662814",
+  "suiteName": "Actuals Page E2E Navigation",
+  "case": {
+    "id": "return-to-current-week",
+    "title": "User returns to current week using Return to Current Week button",
+    "priority": "P1",
+    "platforms": [
+      "chrome",
+      "firefox",
+      "safari",
+      "edge"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-1",
+        "action": "openUrl",
+        "targetDescription": "Open login page",
+        "value": "https://qa.cioptimize.app"
+      },
+      {
+        "id": "step-2",
+        "action": "fill",
+        "targetDescription": "Enter username",
+        "locatorHint": "[name='email']",
+        "value": "auto.tester@yopmail.com"
+      },
+      {
+        "id": "step-3",
+        "action": "fill",
+        "targetDescription": "Enter password",
+        "locatorHint": "[name='password']",
+        "value": "Test@1234"
+      },
+      {
+        "id": "step-4",
+        "action": "tap",
+        "targetDescription": "Click Login button",
+        "locatorHint": "[data-testid='login-submit']"
+      },
+      {
+        "id": "step-5",
+        "action": "tap",
+        "targetDescription": "Navigate to Actuals page",
+        "locatorHint": "[data-testid='nav-actuals']"
+      },
+      {
+        "id": "step-6",
+        "action": "tap",
+        "targetDescription": "Click Previous Week button",
+        "locatorHint": "[data-testid='week-nav-prev']"
+      },
+      {
+        "id": "step-7",
+        "action": "tap",
+        "targetDescription": "Click Return to Current Week button",
+        "locatorHint": "[data-testid='week-nav-current']"
+      },
+      {
+        "id": "step-8",
+        "action": "assertVisible",
+        "targetDescription": "Verify current week's actuals are displayed",
+        "locatorHint": "[data-testid='actuals-week-content']"
+      },
+      {
+        "id": "step-9",
+        "action": "assertText",
+        "targetDescription": "Verify URL contains current week's start date",
+        "assertion": "current"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}

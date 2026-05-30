@@ -1,0 +1,80 @@
+{
+  "id": "calendar-date-picker-navigation",
+  "testPlanId": "02ead3c1-bedd-4943-917b-a8d1808139cf",
+  "requirementId": "403df7fe-4c46-49e8-9f76-cb30d3662814",
+  "suiteName": "Actuals Page E2E Navigation",
+  "case": {
+    "id": "calendar-date-picker-navigation",
+    "title": "User opens calendar date picker and navigates to a specific week",
+    "priority": "P1",
+    "platforms": [
+      "chrome",
+      "firefox",
+      "safari",
+      "edge"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step-1",
+        "action": "openUrl",
+        "targetDescription": "Open login page",
+        "value": "https://qa.cioptimize.app"
+      },
+      {
+        "id": "step-2",
+        "action": "fill",
+        "targetDescription": "Enter username",
+        "locatorHint": "[name='email']",
+        "value": "auto.tester@yopmail.com"
+      },
+      {
+        "id": "step-3",
+        "action": "fill",
+        "targetDescription": "Enter password",
+        "locatorHint": "[name='password']",
+        "value": "Test@1234"
+      },
+      {
+        "id": "step-4",
+        "action": "tap",
+        "targetDescription": "Click Login button",
+        "locatorHint": "[data-testid='login-submit']"
+      },
+      {
+        "id": "step-5",
+        "action": "tap",
+        "targetDescription": "Navigate to Actuals page",
+        "locatorHint": "[data-testid='nav-actuals']"
+      },
+      {
+        "id": "step-6",
+        "action": "tap",
+        "targetDescription": "Open calendar date picker",
+        "locatorHint": "[data-testid='week-calendar-picker']"
+      },
+      {
+        "id": "step-7",
+        "action": "tap",
+        "targetDescription": "Select week start date",
+        "locatorHint": "[data-testid='calendar-day-2026-04-06']"
+      },
+      {
+        "id": "step-8",
+        "action": "assertVisible",
+        "targetDescription": "Verify actuals for selected week are displayed",
+        "locatorHint": "[data-testid='actuals-week-content']"
+      },
+      {
+        "id": "step-9",
+        "action": "assertText",
+        "targetDescription": "Verify URL contains selected week's start date",
+        "assertion": "2026-04-06"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}
