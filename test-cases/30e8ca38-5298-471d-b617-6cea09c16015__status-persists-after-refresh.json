@@ -1,0 +1,93 @@
+{
+  "id": "status-persists-after-refresh",
+  "testPlanId": "30e8ca38-5298-471d-b617-6cea09c16015",
+  "requirementId": "9dd7336b-d9e1-42a0-a127-5182d8bca126",
+  "suiteName": "Save and Confirm Actuals - E2E",
+  "case": {
+    "id": "status-persists-after-refresh",
+    "title": "Confirmed status persists after page refresh",
+    "priority": "P0",
+    "platforms": [
+      "chrome",
+      "firefox",
+      "safari",
+      "edge"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Open application URL",
+        "value": "https://qa.cioptimize.app"
+      },
+      {
+        "id": "step2",
+        "action": "fill",
+        "targetDescription": "Enter username",
+        "locatorHint": "[name='username']",
+        "value": "auto.tester@yopmail.com"
+      },
+      {
+        "id": "step3",
+        "action": "fill",
+        "targetDescription": "Enter password",
+        "locatorHint": "[name='password']",
+        "value": "Test@1234"
+      },
+      {
+        "id": "step4",
+        "action": "tap",
+        "targetDescription": "Click Login button",
+        "locatorHint": "[data-testid='login-button']"
+      },
+      {
+        "id": "step5",
+        "action": "tap",
+        "targetDescription": "Navigate to Actuals page",
+        "locatorHint": "[data-testid='nav-actuals']"
+      },
+      {
+        "id": "step6",
+        "action": "tap",
+        "targetDescription": "Select a past week",
+        "locatorHint": "[data-testid='week-selector-past']"
+      },
+      {
+        "id": "step7",
+        "action": "tap",
+        "targetDescription": "Click Save and Confirm",
+        "locatorHint": "[data-testid='save-confirm-button']"
+      },
+      {
+        "id": "step8",
+        "action": "wait",
+        "targetDescription": "Wait for confirmation",
+        "value": "1000"
+      },
+      {
+        "id": "step9",
+        "action": "openUrl",
+        "targetDescription": "Refresh the page",
+        "value": "https://qa.cioptimize.app/actuals"
+      },
+      {
+        "id": "step10",
+        "action": "tap",
+        "targetDescription": "Select the same past week",
+        "locatorHint": "[data-testid='week-selector-past']"
+      },
+      {
+        "id": "step11",
+        "action": "assertText",
+        "targetDescription": "Assert week status is still Confirmed",
+        "locatorHint": "[data-testid='week-status']",
+        "assertion": "Confirmed"
+      }
+    ],
+    "tags": [
+      "@e2e",
+      "@regression"
+    ]
+  }
+}
